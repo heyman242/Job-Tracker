@@ -1,8 +1,22 @@
+import { RouterProvider, createBrowserRouter} from 'react-router-dom';
+import HomeLayout from './pages/HomeLayout';
+HomeLayout
+const router = createBrowserRouter([
+  {
+    path:'/',
+    element:<HomeLayout/>
+  },
+  {
+    path:'/about',
+    element: <div>
+      <h1>about</h1>
+    </div>
+  }
+]) 
 
 const App = () => {
   return (
-    
-    <h1>jobify app</h1>
+    <RouterProvider router={router}/>
   )
 }
 

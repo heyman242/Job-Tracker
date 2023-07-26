@@ -8,7 +8,7 @@ const Register = () => {
       <form className="form">
         <Logo />
         <h4>Register</h4>
-        <FormRow type="text" name="name" defaultValue="doe" />
+        <FormRow type="text" name="name" defaultValue="john" />
         <FormRow
           type="text"
           name="lastName"

@@ -1,4 +1,4 @@
-import mongoose, { Mongoose } from "mongoose";
+import mongoose from "mongoose";
 
 const JobSchema = new mongoose.Schema(
   {
@@ -16,7 +16,7 @@ const JobSchema = new mongoose.Schema(
     },
     jobLocation: {
       type: String,
-      default: "my-city",
+      default: "my city",
     },
   },
   { timestamps: true }

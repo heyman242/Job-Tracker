@@ -9,6 +9,7 @@ const app = express();
 
 //routers
 import jobRouter from "./routes/jobRouter.js";
+import authRouter from './routes/authRouter.js';
 
 //middleware
 import errorHandlerMiddleware from "./middleware/errorHandlerMiddleware.js";
@@ -20,6 +21,7 @@ if (process.env.NODE_ENV === "development") {
 app.use(express.json());
 
 app.use("/api/v1/jobs", jobRouter);
+app.use('/api/v1/auth', authRouter);
 
 
 app.use("*", (req, res) => {

@@ -38,7 +38,6 @@ const DashboardLayout = ({ isDarkThemeEnabled }) => {
     await customFetch.get("/auth/logout");
     toast.success("Logging out...");
   };
-  
 
   return (
     <DashboardContext.Provider

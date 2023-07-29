@@ -1,5 +1,3 @@
-import React from "react";
-
 const FormRowSelect = ({ name, labelText, list, defaultValue = "" }) => {
   return (
     <div className="form-row">

@@ -7,12 +7,17 @@ import {
   Landing,
   Error,
   AddJob,
+  Stats,
+  AllJobs,
+  Profile,
+  Admin,
+  EditJob,
 } from "./pages";
 
 import { action as registerAction } from "./pages/Register";
 import { action as loginAction } from "./pages/Login";
-import { loader as dashboardLoader } from './pages/DashboardLayout';
-
+import { action as addJobAction } from "./pages/AddJob";
+import { loader as dashboardLoader } from "./pages/DashboardLayout";
 
 const checkDefaultTheme = () => {
   const isDarkTheme = localStorage.getItem("darkTheme") === "true";
@@ -45,14 +50,35 @@ const router = createBrowserRouter([
       {
         path: "dashboard",
         element: <DashboardLayout isDarkThemeEnabled={isDarkThemeEnabled} />,
-        loader:dashboardLoader,
+        loader: dashboardLoader,
         children: [
           {
             index: true,
             element: <AddJob />,
-            
+            action: addJobAction,
           },
-        ]
+          {
+            path: "stats",
+            element: <Stats />,
+          },
+          {
+            path: "all-jobs",
+            element: <AllJobs />,
+          },
+          {
+            path: "profile",
+            element: <Profile />,
+          },
+          {
+            path: "admin",
+            element: <Admin />,
+          },
+          {
+            path: "edit-job/:id",
+            element: <EditJob />,
+          },
+          { path: "delete-job/:id" },
+        ],
       },
     ],
   },

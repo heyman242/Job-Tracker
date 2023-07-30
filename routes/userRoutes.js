@@ -1,6 +1,6 @@
 import { Router } from "express";
 import {
-  updatedUser,
+  updateUser,
   getApplicationStats,
   getCurrentUser,
 } from "../controllers/userController.js";
@@ -19,7 +19,7 @@ router.patch(
   "/update-user",
   upload.single("avatar"),
   validateUpdateUserInput,
-  updatedUser
+  updateUser
 );
 
 export default router;

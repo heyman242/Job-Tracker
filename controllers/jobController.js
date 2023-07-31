@@ -4,20 +4,26 @@ import mongoose from "mongoose";
 import day from "dayjs";
 
 export const getAllJobs = async (req, res) => {
-  const { search } = req.query;
+  const { search, jobStatus, jobType } = req.query;
 
-  const queryOject = {
+  const queryObject = {
     createdBy: req.user.userId,
   };
 
   if (search) {
-    queryOject.$or = [
+    queryObject.$or = [
       { position: { $regex: search, $options: "i" } },
       { company: { $regex: search, $options: "i" } },
     ];
   }
+  if (jobStatus && jobStatus !== "all") {
+    queryObject.jobStatus = jobStatus;
+  }
+  if (jobType && jobType !== "all") {
+    queryObject.jobType = jobType;
+  }
 
-  const jobs = await Job.find(queryOject);
+  const jobs = await Job.find(queryObject);
   res.status(StatusCodes.OK).json({ jobs });
 };
 

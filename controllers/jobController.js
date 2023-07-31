@@ -46,7 +46,7 @@ export const getAllJobs = async (req, res) => {
 
   res
     .status(StatusCodes.OK)
-    .json({ totalJobs, numOfPages, currentPages: page, jobs });
+    .json({ totalJobs, numOfPages, currentPage: page, jobs });
 };
 
 export const createJob = async (req, res) => {

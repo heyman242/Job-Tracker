@@ -15,13 +15,30 @@ const Landing = () => {
             Job <span>Tracking</span> app
           </h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-            similique ipsum amet maxime porro, molestias velit numquam voluptas
-            quo? Fugit consequatur error aspernatur adipisci quidem dicta,
-            tenetur quasi accusamus architecto.
+            
+           
+            <h7>
+              - Browse job categories.
+            </h7>
+            <br />
+            <h7>- Track application status.</h7>
+            <br />
+            <h7>- View all applied jobs in one place.</h7>
+            <br />
+            <h7>- Get valuable stats on your applications.</h7>
+            <br />
+            <h7>- Update profile & upload profile photo.</h7>
+            <br />
+            <h7>- Dark mode for comfortable browsing.</h7>
+            <br />
+            
           </p>
-          <Link to="/register" className="btn register-link">register</Link>
-          <Link to="/login" className="btn ">login / Demo User</Link>
+          <Link to="/register" className="btn register-link">
+            register
+          </Link>
+          <Link to="/login" className="btn ">
+            login / Demo User
+          </Link>
         </div>
         <img src={main} alt="job hunt" className="img main-img" />
       </div>
